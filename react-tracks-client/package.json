@@ -1,5 +1,5 @@
 {
-  "name": "react-tracks",
+  "name": "react-tracks-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
