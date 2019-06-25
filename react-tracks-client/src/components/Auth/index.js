@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import Register from './Register';
-import Lofin from './Login';
+import Login from './Login';
 
-const auth = () => {
-  return <Register />;
+const Auth = () => {
+  const [newUser, setNewUser] = useState(true);
+  return newUser ? (
+      <Register setNewUser={setNewUser} />
+  ) : (
+      <Login />
+  )
 };
 
-export default auth;
+export default Auth;
