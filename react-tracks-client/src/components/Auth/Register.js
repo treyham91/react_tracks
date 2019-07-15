@@ -3,6 +3,8 @@ import {Mutation} from 'react-apollo';
 import {gql} from 'apollo-boost';
 import './forms.css';
 
+import Error from '../Auth/Error';
+
 
 function setVisibility(open) {
     let visibility = 'hidden';
@@ -52,7 +54,7 @@ function Register({setNewUser}) {
                             <button disabled={loading || !username.trim() || !email.trim() || !password.trim()}
                                     type="submit">{loading ? "Registering..." : "Register"}</button>
                             <button onClick={() => setNewUser(false)} type="submit">Previous User? Log in here</button>
-                            {error && <div>Error</div>}
+                            {error && <Error error={error}/>}
                         </form>
                      )
                  }}

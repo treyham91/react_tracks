@@ -7,7 +7,7 @@ const Auth = () => {
   return newUser ? (
       <Register setNewUser={setNewUser} />
   ) : (
-      <Login />
+      <Login setNewUser={setNewUser} />
   )
 };
 

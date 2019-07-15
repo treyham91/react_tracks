@@ -6,7 +6,7 @@ import {gql} from 'apollo-boost';
 function App() {
     return (
         <div className="App">
-            <Query query={GET_USERS_QUERY}>
+            <Query query={ME_QUERY}>
                 {({data, loading, error}) => {
                     if (loading) return <div>Loading</div>
                     if (error) return <div>Error</div>
@@ -16,6 +16,17 @@ function App() {
         </div>
     );
 }
+
+const ME_QUERY =gql`
+    {
+        me {
+            id
+            username 
+            email
+        }
+    }
+    
+`
 
 const GET_USERS_QUERY = gql`
  {
